@@ -2,4 +2,7 @@ import psutil
 
 
 def main(argv=None):
-    return 0
+    process = psutil.Popen(*argv)
+    process.wait()
+    returncode = process.returncode
+    return returncode
